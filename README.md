@@ -1,6 +1,6 @@
 # Youtube react clone
 
-this project cloned youtube by using React, and following APIs.
+this project cloned youtube by using React and following APIs.
 
 - [google map](https://github.com/tomchentw/react-google-maps)
 - [sparkline](https://github.com/borisyankov/react-sparklines)
