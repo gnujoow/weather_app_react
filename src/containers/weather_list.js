@@ -6,14 +6,16 @@ import Chart from '../components/chart';
 class WeatherList extends React.Component {
   renderWeather(cityData) {
     const name = cityData.city.name;
-    const temps = cityData.list.map(weather => weather.main.temp);
+    const temp = cityData.list.map(weather => weather.main.temp);
+    const press = cityData.list.map(weather => weather.main.pressure);
+    const hum = cityData.list.map(weather => weather.main.humidity);
 
     return(
       <tr key={name}>
         <td>{name}</td>
-        <td>
-          <Chart data={temps} color="orange" />
-        </td>
+        <td><Chart data={temp} color="orange" units="k"/></td>
+        <td><Chart data={press} color="green" units="hPa"/></td>
+        <td><Chart data={hum} color="blue" units="%"/></td>
       </tr>
     );
   }
@@ -24,9 +26,9 @@ class WeatherList extends React.Component {
         <thead>
           <tr>
             <th>도시</th>
-            <th>온도</th>
-            <th>기압</th>
-            <th>습도</th>
+            <th>온도(K)</th>
+            <th>기압(hPa)</th>
+            <th>습도(%)</th>
           </tr>
         </thead>
         <tbody>
